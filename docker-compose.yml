@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: sakak_test
+      POSTGRES_USER: kukjun
+      POSTGRES_PASSWORD: kukjun_test123
+    ports:
+      - "5500:5432"
