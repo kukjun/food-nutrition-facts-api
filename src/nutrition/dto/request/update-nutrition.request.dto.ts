@@ -1,8 +1,3 @@
-import { OmitType } from '@nestjs/swagger';
-import { NutritionEntity } from '../../entities/nutrition.entity';
+import { CreateNutritionRequestDto } from './create-nutrition.request.dto';
 
-export class UpdateNutritionRequestDto extends OmitType(NutritionEntity, [
-  'id',
-  'createdAt',
-  'lastModifiedAt',
-]) {}
+export class UpdateNutritionRequestDto extends CreateNutritionRequestDto {}
