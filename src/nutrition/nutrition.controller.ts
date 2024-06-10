@@ -16,10 +16,18 @@ import { UpdateNutritionRequestDto } from './dto/request/update-nutrition.reques
 import { GetNutritionRequestQueryDto } from './dto/request/get-nutrition.request-query.dto';
 import { GetNutritionListResponseDto } from './dto/response/get-nutrition-list.response.dto';
 import { NutritionService } from './nutrition.service';
+import {
+  ApiCreatedResponse,
+  ApiOkResponse,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
 
+@ApiTags('nutrition')
 @Controller('nutrition')
 export class NutritionController {
   constructor(private readonly nutritionService: NutritionService) {}
+  @ApiCreatedResponse({ type: IdResponseDto })
   @Post()
   @HttpCode(HttpStatus.CREATED)
   async createNutrition(
@@ -28,6 +36,7 @@ export class NutritionController {
     return await this.nutritionService.createNutrition(requestBody);
   }
 
+  @ApiCreatedResponse({ type: IdResponseDto })
   @Put(':id')
   @HttpCode(HttpStatus.CREATED)
   async updateNutrition(
@@ -43,6 +52,7 @@ export class NutritionController {
     return await this.nutritionService.deleteNutrition(id);
   }
 
+  @ApiOkResponse({ type: GetNutritionListResponseDto })
   @Get()
   @HttpCode(HttpStatus.OK)
   async readNutrition(
