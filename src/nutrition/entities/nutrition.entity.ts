@@ -1,23 +1,31 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BeforeInsert,
+  BeforeUpdate,
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity('nutrition')
 export class NutritionEntity {
   @PrimaryGeneratedColumn('increment')
   id: number;
   @Column()
-  food_cd: string;
+  foodCd: string;
   @Column()
-  group_name: string;
+  groupName: string;
   @Column()
-  food_name: string;
+  foodName: string;
   @Column()
-  research_year: number;
+  researchYear: number;
   @Column()
-  maker_name: string;
+  makerName: string;
   @Column()
-  ref_name: string;
+  refName: string;
   @Column({ nullable: true })
-  serving_size: number;
+  servingSize: number;
   @Column({ nullable: true })
   calorie: number;
   @Column({ nullable: true })
@@ -31,17 +39,13 @@ export class NutritionEntity {
   @Column({ nullable: true })
   cholesterol: number;
   @Column({ nullable: true })
-  saturated_fatty_acids: number;
+  saturatedFattyAcids: number;
   @Column({ nullable: true })
-  trans_fat: number;
-  @Column({
-    type: 'timestamp',
-  })
-  created_at: number;
-  @Column({
-    type: 'timestamp',
-  })
-  last_modified_at: number;
+  transFat: number;
+  @CreateDateColumn()
+  createdAt: Date;
+  @UpdateDateColumn()
+  lastModifiedAt: Date;
 
   // id serial [primary key]
   // food_cd varchar(255)
