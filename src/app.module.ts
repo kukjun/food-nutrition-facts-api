@@ -15,8 +15,8 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
           username: 'kukjun',
           password: 'kukjun_test123',
           database: 'sakak_test',
-          logging: true,
-          synchronize: true,
+          logging: false,
+          synchronize: false,
           entities: [join(__dirname, '/**/*.entity.*')],
           namingStrategy: new SnakeNamingStrategy(),
         };
