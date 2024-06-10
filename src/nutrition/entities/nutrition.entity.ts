@@ -2,6 +2,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  Index,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -11,10 +12,12 @@ export class NutritionEntity {
   @PrimaryGeneratedColumn('increment')
   id: number;
   @Column()
+  @Index()
   foodCd: string;
   @Column()
   groupName: string;
   @Column()
+  @Index()
   foodName: string;
   @Column()
   researchYear: number;
