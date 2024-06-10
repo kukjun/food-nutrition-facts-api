@@ -48,7 +48,6 @@ export class NutritionController {
   async readNutrition(
     @Query() requestQuery: GetNutritionRequestQueryDto,
   ): Promise<GetNutritionListResponseDto> {
-    console.log(requestQuery);
     return await this.nutritionService.getNutritions(requestQuery);
   }
 }
