@@ -1,6 +1,6 @@
 export class GetNutritionRequestQueryDto {
   foodName: string;
-  researchYear: number;
+  researchYear: string;
   makerName: string;
   foodCode: string;
 }

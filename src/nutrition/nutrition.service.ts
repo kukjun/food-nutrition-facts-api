@@ -5,6 +5,9 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { NutritionEntity } from './entities/nutrition.entity';
 import { Repository } from 'typeorm';
 import { UpdateNutritionRequestDto } from './dto/request/update-nutrition.request.dto';
+import { GetNutritionRequestQueryDto } from './dto/request/get-nutrition.request-query.dto';
+import { GetNutritionListResponseDto } from './dto/response/get-nutrition-list.response.dto';
+import { GetNutritionDto } from './dto/get-nutrition.dto';
 
 @Injectable()
 export class NutritionService {
@@ -47,5 +50,43 @@ export class NutritionService {
     await this.nutritionRepository.remove(beforeEntity);
 
     return;
+  }
+
+  async getNutritions(
+    queryDto: GetNutritionRequestQueryDto,
+  ): Promise<GetNutritionListResponseDto> {
+    const queryBuilder =
+      this.nutritionRepository.createQueryBuilder('nutrition');
+
+    if (queryDto.foodName) {
+      queryBuilder.andWhere('nutrition.foodName = :foodName', {
+        foodName: queryDto.foodName,
+      });
+    }
+    if (queryDto.researchYear) {
+      queryBuilder.andWhere('nutrition.researchYear = :researchYear', {
+        researchYear: queryDto.researchYear,
+      });
+    }
+    if (queryDto.makerName) {
+      queryBuilder.andWhere('nutrition.makerName = :makerName', {
+        makerName: queryDto.makerName,
+      });
+    }
+    if (queryDto.foodCode) {
+      queryBuilder.andWhere('nutrition.foodCd = :foodCode', {
+        foodCode: queryDto.foodCode,
+      });
+    }
+
+    const result = await queryBuilder.getMany();
+    const getNutritionDtoList: GetNutritionDto[] = result.map((nutrition) => {
+      const { createdAt, lastModifiedAt, ...dto } = nutrition;
+      return dto;
+    });
+
+    return {
+      nutritionList: getNutritionDtoList,
+    };
   }
 }
