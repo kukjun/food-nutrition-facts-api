@@ -6,7 +6,6 @@ export class GetNutritionListResponseDto {
   @ApiProperty({
     type: [GetNutritionDto],
     description: '영양 출력 List 정보',
-    required: false,
   })
   @Type(() => GetNutritionDto)
   nutritionList: GetNutritionDto[];
