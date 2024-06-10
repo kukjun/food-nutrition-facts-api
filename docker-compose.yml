@@ -1,4 +1,18 @@
 services:
+  app:
+    image: food-nutrition-facts-backend
+    build: .
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=kukjun
+      - DB_PASSWORD=kukjun_test123
+      - DB_NAME=sakak_test
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+
   db:
     image: postgres:latest
     restart: always

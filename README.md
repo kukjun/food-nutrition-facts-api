@@ -53,23 +53,11 @@ DB 구조 설계는 요구사항 정의, 개념적 설계, 논리적 설계, 물
 
 ### API 구현
 
-Create API
-
-Update API
-
-Delete API
-
-Read API
+Create API, Update API, Delete API, Read API
 
 를 만들어두었고 Swagger를 이용해서 사용 방법을 확인할 수 있다.
 
-/apiDocs 으로 접근할 수 있다.
-
-
-
-
-
-
+/apiDocs 으로 접근해서 확인할 수 있다.
 
 
 
@@ -78,5 +66,4 @@ Read API
 #### DB 정규화를 고려하지 않은 이유.
 
 출력 항목에 대한 정규화가 가능한 내용은 지역/제조사 부분인데, API 생성, 수정시 지역/제조사가 바뀌는 것을 고려해야 하므로,
-API 복잡성 증가를 고려해서 정규화를 하지 않았다.  
-
+API 복잡성 증가를 고려해서 정규화를 하지 않았다.
