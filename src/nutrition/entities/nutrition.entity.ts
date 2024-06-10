@@ -1,6 +1,4 @@
 import {
-  BeforeInsert,
-  BeforeUpdate,
   Column,
   CreateDateColumn,
   Entity,
@@ -28,6 +26,8 @@ export class NutritionEntity {
   servingSize: number;
   @Column({ nullable: true })
   calorie: number;
+  @Column({ nullable: true })
+  carbohydrate: number;
   @Column({ nullable: true })
   protein: number;
   @Column({ nullable: true })
