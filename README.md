@@ -67,3 +67,33 @@ Create API, Update API, Delete API, Read API
 
 출력 항목에 대한 정규화가 가능한 내용은 지역/제조사 부분인데, API 생성, 수정시 지역/제조사가 바뀌는 것을 고려해야 하므로,
 API 복잡성 증가를 고려해서 정규화를 하지 않았다.
+
+
+
+# 실행방법
+
+이 프로젝트는 NestJS로 작성된 웹 애플리케이션입니다. Docker 및 Docker Compose를 사용하여 쉽게 실행해 볼 수 있습니다.
+
+## 프로젝트 실행 방법
+
+<br>
+<br>
+
+### 사전 요구 사항
+- [Docker](https://www.docker.com/)가 설치되어 있어야 합니다.
+- [Docker Compose](https://docs.docker.com/compose/)가 설치되어 있어야 합니다.
+
+<br>
+<br>
+
+### Docker Compose를 사용하여 프로젝트 실행
+
+1. Docker Compose를 사용하여 컨테이너를 시작합니다:
+
+    ```bash
+    docker-compose up -d
+    ```
+
+2. 브라우저를 열고 `http://localhost:3000`에 접속합니다. 애플리케이션이 정상적으로 실행되고 있는 것을 확인할 수 있습니다.
+
+3. 애플리케이션의 API 문서는 `http://localhost:3000/apiDocs` Swagger를 통해 확인할 수 있습니다. 
