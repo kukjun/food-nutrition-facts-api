@@ -93,7 +93,15 @@ DB 구조 설계는 요구사항 정의, 개념적 설계, 논리적 설계, 물
 
 ![sakak_diagram-3.png](resource%2Fsakak_diagram-3.png)
 
-문자열을 varchar(255)로만 제한 해 두었지만 개발 완료 후, 문자열 제한사항을 조금 더 강하게 수정할 예정
+<br>
+<br>
+
+#### 최종 DB 구조
+
+구현을 완료하면서, 조금씩 변한 구조와 Null 조건을 마지막으로 수정함.
+
+![sakak_diagram-4.png](resource%2Fsakak_diagram-4.png)
+
 
 <br>
 <br>
@@ -104,9 +112,6 @@ DB 구조 설계는 요구사항 정의, 개념적 설계, 논리적 설계, 물
 Create API, Update API, Delete API, Read API
 
 를 만들어두었고 Swagger를 이용해서 사용 방법을 확인할 수 있다.
-
-/apiDocs 으로 접근해서 확인할 수 있다.
-
 
 
 ## 고려한 점
