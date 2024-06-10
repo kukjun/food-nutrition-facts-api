@@ -34,7 +34,9 @@ export class NutritionService {
     const beforeEntity = await this.nutritionRepository.findOne({
       where: { id },
     });
-    if (beforeEntity === null) throw new NotFoundException();
+    if (beforeEntity === null) {
+      throw new NotFoundException('Nutrition Not Found');
+    }
     const updatedEntity = Object.assign(beforeEntity, request);
     const result = await this.nutritionRepository.save(updatedEntity);
 
@@ -45,14 +47,16 @@ export class NutritionService {
     const beforeEntity = await this.nutritionRepository.findOne({
       where: { id },
     });
-    if (beforeEntity === null) throw new NotFoundException();
+    if (beforeEntity === null) {
+      throw new NotFoundException('Nutrition Not Found');
+    }
 
     await this.nutritionRepository.remove(beforeEntity);
 
     return;
   }
 
-  async getNutritions(
+  async getNutrition(
     queryDto: GetNutritionRequestQueryDto,
   ): Promise<GetNutritionListResponseDto> {
     const queryBuilder =
