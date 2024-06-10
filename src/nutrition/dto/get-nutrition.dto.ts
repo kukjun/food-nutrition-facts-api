@@ -1,4 +1,4 @@
-import { ApiProperty, OmitType } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 import { NutritionEntity } from '../entities/nutrition.entity';
 
 export class GetNutritionDto

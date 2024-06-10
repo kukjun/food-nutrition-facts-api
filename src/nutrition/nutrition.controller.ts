@@ -16,12 +16,7 @@ import { UpdateNutritionRequestDto } from './dto/request/update-nutrition.reques
 import { GetNutritionRequestQueryDto } from './dto/request/get-nutrition.request-query.dto';
 import { GetNutritionListResponseDto } from './dto/response/get-nutrition-list.response.dto';
 import { NutritionService } from './nutrition.service';
-import {
-  ApiCreatedResponse,
-  ApiOkResponse,
-  ApiResponse,
-  ApiTags,
-} from '@nestjs/swagger';
+import { ApiCreatedResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('nutrition')
 @Controller('nutrition')

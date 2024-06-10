@@ -150,7 +150,6 @@ export class CreateNutritionRequestDto
   saturatedFattyAcids: number;
 
   @ApiProperty({
-    type: Number,
     description: '트랜스지방(g)(1회제공량당)',
     required: false,
     example: 90,
